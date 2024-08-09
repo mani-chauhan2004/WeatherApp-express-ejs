@@ -1,0 +1,154 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif, sans;
+}
+
+body{
+    height: auto;
+    background-color: #0080FF;
+}
+
+.header-container{
+    width: 100%;
+    background-color: #0080FF;
+    position: fixed;
+    z-index: 100;
+}
+
+.weather-heading{
+    font-size: 4em;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+
+@media only screen and (max-width: 1050px){
+    .weather-heading{
+        font-size: 3em;
+    }
+    .weather-details-display-container{
+        padding: 2em;
+    }
+}
+@media only screen and (max-width: 650px){
+    .weather-details-display-container{
+        padding: 2em;
+        flex-direction: column;
+    }
+}
+
+
+.weather-details-container{
+    position: relative;
+    top: 8em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.city{
+    font-size: 2em;
+    color: white;
+    font-weight: bold;
+    padding: 2px;
+}
+
+.search-space{
+    position: relative;
+    top: 1em;
+}
+
+
+.city-input{
+    font-size: 1.5em;
+    border-radius: 12px;
+    padding: 2px 4px 2px 4px;
+}
+
+.city-search-button{
+    font-size: 1.4em;
+    padding: 3px 6px 3px 6px;
+    border-radius: 12px;
+    background-color: lightgreen;
+    color: white;
+}
+
+.weather-details-display-container{
+    position: relative;
+    top: 4em;
+    border: 1px solid blue;
+    border-radius: 12px;
+    box-shadow: 2px 2px 3px 1px rgba(194, 224, 242, 0.3);
+    height: auto;
+    width: auto;
+    padding: 12px;
+    background-color: rgba(194, 224, 242, 0.3);
+    color: white;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2em;
+    flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 1050px){
+
+    .weather-details-display-container{
+        max-width: 600px;
+    }
+
+}
+
+
+.weather-icon{
+    height: 10em;
+    background-color: #C2E0F2;
+    border-radius: 50%;
+    border: 2px solid lightblue;
+}
+
+.weather-text-data{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+}
+
+
+.error-message-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.not-found-image{
+    height: 12em;
+}
+
+.not-found-error{
+    color: red;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 2em;
+}
+
+.footer-container{
+    position: relative;
+    width: 100%;
+    top: 21em;
+    background-color: rgba(194, 224, 242, 0.3);
+}
+
+.footer-heading{
+    width: 100%;
+    text-align: center;
+    color: white;
+}

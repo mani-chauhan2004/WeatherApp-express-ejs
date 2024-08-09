@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+    <header class="header-container">
+        <h1 class="weather-heading">Weather Dashboard</h1>
+    </header>
+    
+    
+    <main class="weather-details-container">
+        <form class="form-container" action="/weather-report" method="POST">
+            <label class="city" for="city">City</label>
+            <div class="search-space">
+                <input class="city-input" type="text" name="city" value="" id="city">
+                <input class="city-search-button" type="submit" placeholder="Submit">
+            </div>
+        </form>
+        <div class="weather-details-display-container">
+            <% if(locals.data && data.main){ %>
+                <div class="weather-image-detail">
+                    <img class="weather-icon" src="http://openweathermap.org/img/wn/<%= data.weather[0].icon %>@2x.png" alt="Weather Icon">
+                </div>
+                <div class="weather-text-data">
+                    <h2>City: <%= (data.name) %></h1>
+                    <h2>Country: <%= (data.sys.country) %></h1>
+                    <h2>Temperature: <%= (data.main.temp - 273.15).toFixed(2) %>°C</h1>
+                    <h2>Feels Like: <%= (data.main.feels_like - 273.15).toFixed(2) %>°C</h1>
+                    <h2>Min: <%= (data.main.temp_min -273.15).toFixed(2) %>°C</h1>
+                    <h2>Max: <%= (data.main.temp_max -273.15).toFixed(2) %>°C</h1>
+                    <h2>Humidity: <%= data.main.humidity %>%</h1>
+                </div>
+                <div class="weather-text-data">
+                    <h2>Main: <%= data.weather[0].main %></h1>
+                    <h2>Description: <%= (data.weather[0].description) %></h1>
+                    <h2>Clouds: <%= (data.clouds.all) %></h1>
+                    <h2>Pressure: <%= data.main.pressure %>hPa</h1>
+                    <h2>Sea Level: <%= (data.main.sea_level)%>hpa</h1>
+                    <h2>Ground Level: <%= (data.main.grnd_level)%>hpa</h1>
+                    <h2>Visibility: <%= (data.visibility)%>m</h1>
+                </div>
+                <div class="weather-text-data">
+                    <h2>Wind Speed: <%= (data.wind.speed) %>m/s</h1>
+                    <h2>Wind deg: <%= (data.wind.deg) %></h1>
+                    <h2>Gust: <%= (data.wind.gust) %>m/s</h1>
+                    <h2>Sunrise: <%= (data.main.temp_max -273.15).toFixed(2) %>°C</h1>
+                    <h2>Sunset: <%= data.sys.sunrise %></h1>
+                    <h2>Humidity: <%= data.sys.sunset %></h1>
+                </div>
+            <% } else {  %>
+                <div class="error-message-container">
+                    <img class="not-found-image" src="images/thinking-face-smiley.1012x1024.png" alt="">
+                    <h2 class="not-found-error" >City Invalid! Data not found</h2>
+                </div>
+            <% } %>
+        </div>
+    </main>
+    <footer class="footer-container">
+            <h3 class="footer-heading">Made using OpenWeatherApi</h3>
+    </footer>
+</body>
+</html>
