@@ -47,9 +47,8 @@
                     <h2>Wind Speed: <%= (data.wind.speed) %>m/s</h1>
                     <h2>Wind deg: <%= (data.wind.deg) %></h1>
                     <h2>Gust: <%= (data.wind.gust) %>m/s</h1>
-                    <h2>Sunrise: <%= (data.main.temp_max -273.15).toFixed(2) %>°C</h1>
-                    <h2>Sunset: <%= data.sys.sunrise %></h1>
-                    <h2>Humidity: <%= data.sys.sunset %></h1>
+                    <h2>Sunrise: <%= (data.sys.sunrise) %></h1>
+                    <h2>Sunset: <%= (data.sys.sunset) %></h1>
                 </div>
             <% } else {  %>
                 <div class="error-message-container">
